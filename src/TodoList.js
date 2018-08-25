@@ -45,7 +45,7 @@ class TodoList extends Component {
     handleInputChange(e) {
 
         const action = {
-            type: CHANGE_INPUT_VALUE',
+            type: CHANGE_INPUT_VALUE,
             value: e.target.value
         }
 
