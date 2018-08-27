@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import store from './store/index.js';
-import {getInputChangeAction, getAddItemAction, getDeleteItemAction, initListAction, getTodoList} from './store/actionCreators';
+import {getInputChangeAction, getAddItemAction, getDeleteItemAction, initListAction, getTodoList, getInitList} from './store/actionCreators';
 import TodoListUI from './TodoListUI';
+import axios from 'axios';
+
 
 // const data = [
 //     'Racing car sprays burning fuel into crowd.',
@@ -37,12 +39,9 @@ class TodoList extends Component {
     }
 
     componentDidMount() {
-        // axios.get('/api/todolist').then((res) => {
-        //     const data = res.data;
-        //     const action = initListAction(data);
-        //     store.dispatch(action);
-        // });
-        const action = getTodoList();
+
+        const action = getInitList();
+        console.log(action);
         store.dispatch(action);
     }
 
